@@ -18,6 +18,12 @@ body {
     src: local(../assets/fonts/DroidSans.ttf);
 }
 
+@font-face {
+    font-family: DroidSansBold;
+    src: local(../assets/fonts/DroidSans-Bold.ttf);
+}
+
+
 .header{
     width: 100%;
     height: 60px;
@@ -68,4 +74,57 @@ body {
         width: 600px;
     }
  
+}
+
+.card > .title{
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+
+}
+
+.card > .date{
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 0.7em;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.card > .text{
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    text-align: justify;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.card > .local{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 30px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: #FFF;
+    box-sizing: border-box;
+    background-color: #79D62C;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
