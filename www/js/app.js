@@ -20,7 +20,7 @@ spa.controller('mainCtrl',['$scope', '$http','$timeout', function CardapioCtrl($
         $timeout(function(){
             let splash = document.querySelector("#splash");
             splash.remove();
-        }, 2000);
+        }, 3000);
 
         $scope.openInBrowser = function(url){
             window.open(url);
