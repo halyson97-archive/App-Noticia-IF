@@ -7,12 +7,16 @@
     </head>
     <body ng-controller="mainCtrl as main">
 
+        <div id="splash">
+            <img class="logo" src="assets/icon/icon.png">
+        </div>
+
         <div class="header">Notícias</div>   
 
-        <div class="card" ng-repeat="noticia in noticias" ng-click="openInBrowser(noticia.url)">
+        <div ng-if="noticias" class="card" ng-repeat="noticia in noticias" ng-click="openInBrowser(noticia.url)">
         
             <div class="title">{{noticia.title}}</div>
-            <div class="date">{{noticia.date}}</div>
+            <div class="date">{{noticia.date  | date : format : timezone}}</div>
          
             <div class="text">{{noticia.subtitle}}</div>
                     

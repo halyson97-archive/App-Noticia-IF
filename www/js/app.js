@@ -2,8 +2,7 @@
 
 var spa = angular.module('appNoticias', ['ngRoute']);
 
-spa.controller('mainCtrl',['$scope', '$http',  
-    function CardapioCtrl($scope, $http) {
+spa.controller('mainCtrl',['$scope', '$http','$timeout', function CardapioCtrl($scope, $http,$timeout) {
 
         $http({ 
             url: "http://45.55.226.209/news/getLast", 
@@ -18,9 +17,16 @@ spa.controller('mainCtrl',['$scope', '$http',
             console.log(response);          
         });
 
+        $timeout(function(){
+            let splash = document.querySelector("#splash");
+            splash.remove();
+        }, 2000);
+
         $scope.openInBrowser = function(url){
             window.open(url);
         }
+
+
 
        
         
