@@ -84,6 +84,7 @@ body {
     padding-right: 10px;
     font-size: 1.1em;
     font-weight: bold;
+    box-sizing: border-box;
 
 }
 
