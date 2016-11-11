@@ -34,7 +34,7 @@ body {
 }
 
 .card{
-    min-height: 200px;
+    min-height: 50px;
     background-color: #FFF;
     position: relative;
     margin: auto;
