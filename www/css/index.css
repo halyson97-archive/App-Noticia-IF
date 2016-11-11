@@ -23,7 +23,6 @@ body {
     src: local(../assets/fonts/DroidSans-Bold.ttf);
 }
 
-
 .header{
     width: 100%;
     height: 60px;
@@ -40,10 +39,13 @@ body {
     box-shadow:         0px 3px 5px 0px rgba(50, 50, 50, 0.3);
 }
 
-.header > .iconSearch{
-    height: 100%;
+.iconSearch{
+    z-index: 5;
+    display: block;
+    position: fixed;
+    right: 0;
+    height: 60px;
     width: 50px;
-    float: right;
 }
 
 .iconSearch > .icon{
@@ -118,7 +120,6 @@ body {
     text-overflow: ellipsis;
 }
 
-
 .card > .text{
     width: 100%;
     padding: 10px;
@@ -129,7 +130,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 
 .card > .local{
     width: 100%;
@@ -151,7 +151,7 @@ body {
 #splash{
     width: 100%;
     height: 100vh;
-    z-index: 5;
+    z-index: 10;
     position: fixed;
     background-color: #FFF;
 }
@@ -163,4 +163,54 @@ body {
     left:50%;
     margin-top:-40px;
     margin-left:-175px;
+}
+
+#toolbar-search{
+    display: none;
+    width: 100%;
+    position: fixed;
+    z-index: 6;
+
+}
+
+#toolbar-search > .containerSearch{
+    height: 60px;
+    position: fixed;
+    background-color: #F44336;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    border-radius: 1px;
+}
+
+#inputSearch{
+    width: calc(100% - 65px);
+    background-color: #F44336;
+    height: 58px;
+    color: #fff;
+    margin: auto;
+    font-size: 1em;
+    border: 0px;
+    margin-left: 15px;
+}
+
+#inputSearch:focus{
+    outline: none;
+}
+
+.containerSearch > .iconRight{
+    height: 100%;
+    width: 50px;
+    float: right;
+}
+
+.iconRight > .icon{
+    width: 50%;
+    height: 50%;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
 }

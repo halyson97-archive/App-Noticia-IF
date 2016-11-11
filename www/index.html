@@ -3,17 +3,37 @@
     <head>       
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/paper-input.css">
         <title>Notícias IFGoiano</title>
     </head>
     <body ng-controller="mainCtrl as main">
+
+
+    <div id="toolbar-search">
+
+        <div class="containerSearch">
+            
+               <input id="inputSearch" type="text" name="buscar" ng-model="searchUser">
+
+
+            <div ng-click="closeSearch()" class="iconRight">
+                <img class="icon" src="./img/ic_close_white_24px.svg">
+            </div>
+        </div>
+    </div>
 
         <div id="splash">
             <img class="logo" src="assets/logo/LogoIFMorrinhos.png">
         </div>
 
-        <div class="header">Notícias</div>   
+        <div class="header">Notícias</div>
 
-        <div ng-if="noticias" class="card" ng-repeat="noticia in noticias" ng-click="openInBrowser(noticia.url)">
+        <div class="iconSearch" ng-click="openSearch()">
+            <img class="icon" src="img/ic_search_white_24px.svg">
+        </div>  
+
+
+        <div ng-if="noticias" class="card" ng-repeat="noticia in noticias  | filter:searchUser"" ng-click="openInBrowser(noticia.url)">
         
             <div class="title">{{noticia.title}}</div>
             <div class="date">{{noticia.date  | date : format : timezone}}</div>

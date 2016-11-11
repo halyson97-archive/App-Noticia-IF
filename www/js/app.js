@@ -26,8 +26,17 @@ spa.controller('mainCtrl',['$scope', '$http','$timeout', function CardapioCtrl($
             window.open(url);
         }
 
+        $scope.openSearch = function(){
+            let toolbar = document.querySelector("#toolbar-search");
+            toolbar.style.display = "block";
+            let inp = document.querySelector("#inputSearch");
+            inp.focus();
 
+        }
 
-       
-        
+        $scope.closeSearch = function(){
+            $scope.searchUser = "";
+            let toolbar = document.querySelector("#toolbar-search");
+            toolbar.style.display = "none";
+        }    
     }]);
