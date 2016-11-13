@@ -10,11 +10,29 @@ spa.controller('mainCtrl',['$scope', '$http','$timeout', function CardapioCtrl($
             method:'GET',
             headers: {'Content-Type': 'application/json'},
         }).success(function (response) {
+
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem("noticias", JSON.stringify(response.data));
+            $scope.noticias = JSON.parse(localStorage.getItem("noticias"));
+            console.log("pegando noticias da requisição");
+
+        } else {
             $scope.noticias = response.data;
-            console.log(response);
+        }
+
+            console.log(response.data);
         }).error(function (response) {
-            console.log("Erro");
-            console.log(response);          
+
+            if (typeof(Storage) !== "undefined") {
+                if(JSON.parse(localStorage.getItem("noticias")) !== null){
+                    $scope.noticias = JSON.parse(localStorage.getItem("noticias"));
+                    console.log("pegando noticias do localstorage");
+                }                 
+            } else {
+                console.log("Erro");
+                console.log(response);  
+            }
+                 
         });
 
         $timeout(function(){
