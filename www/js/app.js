@@ -7,7 +7,7 @@ spa.controller('mainCtrl',['$http','$timeout', function CardapioCtrl( $http,$tim
         let vm = this;
 
         $http({ 
-            url: "http://45.55.226.209/news/getLasta", 
+            url: "http://45.55.226.209/news/getLast", 
             dataType: 'json', 
             method:'GET',
             headers: {'Content-Type': 'application/json'}

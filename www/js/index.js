@@ -5,6 +5,8 @@ var app = {
 
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+        console.log(StatusBar);
+        alert("dispositivo pronto");
     },
 
     receivedEvent: function(id) {
