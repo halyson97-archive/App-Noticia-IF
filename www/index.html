@@ -3,20 +3,17 @@
     <head>       
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="stylesheet" type="text/css" href="css/paper-input.css">
         <title>Notícias IFGoiano</title>
     </head>
     <body ng-controller="mainCtrl as main">
-
 
     <div id="toolbar-search">
 
         <div class="containerSearch">
             
-               <input id="inputSearch" type="text" name="buscar" ng-model="searchUser">
+               <input id="inputSearch" type="text" name="buscar" ng-model="main.searchUser">
 
-
-            <div ng-click="closeSearch()" class="iconRight">
+            <div ng-click="main.closeSearch()" class="iconRight">
                 <img class="icon" src="./img/ic_close_white_24px.svg">
             </div>
         </div>
@@ -28,12 +25,11 @@
 
         <div class="header">Notícias</div>
 
-        <div class="iconSearch" ng-click="openSearch()">
+        <div class="iconSearch" ng-click="main.openSearch()">
             <img class="icon" src="img/ic_search_white_24px.svg">
         </div>  
 
-
-        <div ng-if="noticias" class="card" ng-repeat="noticia in noticias  | filter:searchUser"" ng-click="openInBrowser(noticia.url)">
+        <div ng-if="main.noticias" class="card" ng-repeat="noticia in main.noticias  | filter:main.searchUser"" ng-click="main.openInBrowser(noticia.url)">
         
             <div class="title">{{noticia.title}}</div>
             <div class="date">{{noticia.date  | date : format : timezone}}</div>
@@ -44,6 +40,10 @@
         
         </div>
 
+        <div ng-if="!main.noticias" class="card black">
+            <div class="title">Nenhuma noticia encontrada!</div>
+            <div class="text">Desculpe nenhuma noticia foi encontrada! Por favor, verifique sua conexão com a internet e reinicie o aplicativo!</div>
+        </div>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
