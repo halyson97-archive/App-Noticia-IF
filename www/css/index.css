@@ -76,6 +76,7 @@ body {
     background-color: #424242;
     padding: 20px;
     color: #ddd;
+    box-sizing: border-box;
 }
 
 .black > .title{
@@ -195,13 +196,15 @@ body {
 }
 
 #inputSearch{
-    width: calc(100% - 65px);
+    width: calc(100% - 75px);
     background-color: #F44336;
-    height: 58px;
+    height: 40px;
+    transform: translateY(5px);
     color: #fff;
     margin: auto;
     font-size: 1em;
     border: 0px;
+    border-bottom: 2px solid #fff;
     margin-left: 15px;
 }
 
