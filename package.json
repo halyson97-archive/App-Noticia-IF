@@ -1,0 +1,22 @@
+{
+  "name": "app-noticia-if",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halyson97/App-Noticia-IF.git"
+  },
+  "author": "Halyson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halyson97/App-Noticia-IF/issues"
+  },
+  "homepage": "https://github.com/halyson97/App-Noticia-IF#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
