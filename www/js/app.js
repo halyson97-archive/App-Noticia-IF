@@ -6,13 +6,12 @@ spa.controller('mainCtrl',['$http','$timeout', function CardapioCtrl( $http,$tim
 
         let vm = this;
 
-        $http({ 
+        $http({
             url: "http://45.55.226.209/news/getLast", 
             dataType: 'json', 
             method:'GET',
             headers: {'Content-Type': 'application/json'}
-        }).success(function (response) {
-
+        }).then(function (success){
             if (typeof(Storage) !== "undefined") {
                 localStorage.setItem("noticias", JSON.stringify(response.data));
                 vm.noticias = JSON.parse(localStorage.getItem("noticias"));
@@ -23,8 +22,7 @@ spa.controller('mainCtrl',['$http','$timeout', function CardapioCtrl( $http,$tim
             }
 
             console.log(response.data);
-        }).error(function (response) {
-
+        },function (error){
             if (typeof(Storage) !== "undefined") {
                 if(JSON.parse(localStorage.getItem("noticias")) !== null){
                     vm.noticias = JSON.parse(localStorage.getItem("noticias"));
@@ -34,7 +32,6 @@ spa.controller('mainCtrl',['$http','$timeout', function CardapioCtrl( $http,$tim
                 console.log("Erro");
                 console.log(response);  
             }
-                 
         });
 
         $timeout(function(){
@@ -44,7 +41,7 @@ spa.controller('mainCtrl',['$http','$timeout', function CardapioCtrl( $http,$tim
 
         vm.openInBrowser = function(url){
             window.open(url);
-        }
+        };
 
         vm.openSearch = function(){
             let toolbar = document.querySelector("#toolbar-search");
@@ -52,11 +49,11 @@ spa.controller('mainCtrl',['$http','$timeout', function CardapioCtrl( $http,$tim
             let inp = document.querySelector("#inputSearch");
             inp.focus();
 
-        }
+        };
 
         vm.closeSearch = function(){
             vm.searchUser = "";
             let toolbar = document.querySelector("#toolbar-search");
             toolbar.style.display = "none";
-        }    
+        }; 
     }]);
